@@ -11,6 +11,7 @@ public class DevquestApplication {
     public static void main(final String[] args) {
         System.out.println("hello, devQuest!");
         SpringApplication.run(DevquestApplication.class, args);
-    }
+
+    } // End of main method
 
 }
