@@ -105,7 +105,7 @@ CREATE TABLE employers
     -- (외래키) 회사 번호
     company_id            INT UNSIGNED,
     -- 고용주의 역할 또는 직책
-    role                  VARCHAR(50),
+    role                  VARCHAR(20),
     -- 다른 고용주를 등록할 수 있는 권한 (0: 없음, 1: 있음)
     can_register_employer BOOLEAN DEFAULT FALSE,
     -- 공고 작성 권한 (0: 없음, 1: 있음)
@@ -124,9 +124,9 @@ CREATE TABLE industries
     -- (기본키) 업종 고유 번호
     industry_id   INT UNSIGNED AUTO_INCREMENT,
     -- 업종 이름, 중복 방지
-    industry_name VARCHAR(50) NOT NULL UNIQUE,
+    industry_name VARCHAR(20) NOT NULL UNIQUE,
     -- 업종에 대한 상세 설명
-    description   TEXT,
+    description   VARCHAR(200),
     -- 업종 고유 번호
     PRIMARY KEY (industry_id)
 );
@@ -154,7 +154,7 @@ CREATE TABLE boards
     -- (기본키) 게시판 고유 번호
     board_id         INT UNSIGNED AUTO_INCREMENT,
     -- 게시판 이름
-    board_name       VARCHAR(50) NOT NULL UNIQUE,
+    board_name       VARCHAR(20) NOT NULL UNIQUE,
     -- 글쓰기 카테고리 고용주에게만 표시할지 여부
     is_employer_only BOOLEAN     NOT NULL DEFAULT FALSE,
     -- 게시판 고유 번호
