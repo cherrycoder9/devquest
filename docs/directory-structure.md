@@ -1,16 +1,25 @@
 <!-- 폴더구조 -->
+
+```text
 DevQuest/
 ├── src/
 │   └── main/
 │       ├── java/
 │       │   └── devquest/
 │       │       ├── config/     # 설정 클래스들
+│       │       │   ├── SecurityConfig.java
+│       │       │   └── ServerConfiguration.java
 │       │       ├── util/       # 유틸리티 클래스들
 │       │       ├── controller/ # 컨트롤러들
+│       │       │   ├── UserController.java
+│       │       │   └── ViewController.java
 │       │       ├── service/    # 서비스 클래스들
+│       │       │   └── UserService.java
 │       │       └── model/
 │       │           ├── dto/    # DTO 클래스들
+│       │           │   └── UserDto.java
 │       │           └── dao/    # DAO 인터페이스 및 구현체들
+│       │               └── UserDao.java
 │       │
 │       └── resources/
 │           ├── static/
@@ -32,7 +41,8 @@ DevQuest/
 │               ├── user/
 │               │   ├── login.html
 │               │   ├── register.html
-│               │   └── profile.html
+│               │   ├── profile.html
+│               │   └── write.html
 │               ├── company/
 │               │   ├── list.html
 │               │   └── detail.html
@@ -58,3 +68,4 @@ DevQuest/
 │   └── api-documentation.md     # API 문서
 │
 └── README.md                    # 프로젝트 설명 및 설치 방법
+```
