@@ -1,4 +1,4 @@
-// src\main\java\devquest\model\dto\ResumeDto.java
+// src\main\java\devquest\model\dto\AuthDto.java
 
 package devquest.model.dto;
 
@@ -11,6 +11,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder // 빌더 패턴 적용 가능하게 함
-public class ResumeDto {
+public class AuthDto {
     Integer tempVar;
-} // End of ResumeDto class
+} // End of AuthDto class

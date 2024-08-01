@@ -1,7 +1,16 @@
 /* src/main/resources/static/css/custom.css */
 
+* {
+    font-family: 'Pretendard-Regular', sans-serif;
+}
+
 #siteLogo {
     font-family: 'SDSamliphopangche_Outline', sans-serif;
+}
+
+#mainMenu {
+    font-family: 'LINESeedKR-Bd', sans-serif;
+    font-weight: bold;
 }
 
 .navbar-nav .nav-item {
