@@ -41,8 +41,11 @@ public class ServerConfiguration {
 
     private Connector createStandardConnector() {
         System.out.println("ServerConfiguration.createStandardConnector");
+        // Connector 클래스는 톰캣 서버의 네트워크 커넥터를 나타내며, 클라이언트 요청을 수신하는 역할
         final Connector connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
-        connector.setPort(8080); // HTTP 포트
+        // HTTP/1.1을 처리하는 비동기 커넥터를 생성
+        connector.setPort(8080);
+        // 구성된 커넥터 객체를 반환. 이 커넥터는 톰캣 서버의 설정에 추가되어, 지정된 포트에서 클라이언트 요청을 처리함
         return connector;
     } // End of createStandardConnector method
 } // End of ServerConfiguration class

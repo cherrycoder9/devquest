@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class WebinarController {
+@RequestMapping("/webinar")
+public class WebinarController extends BaseController {
 } // End of WebinarController class

@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class AuthController {
+@RequestMapping("/auth")
+public class AuthController extends BaseController {
 } // End of AuthController class

@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class TeamController {
+@RequestMapping("/team")
+public class TeamController extends BaseController {
 } // End of TeamController class

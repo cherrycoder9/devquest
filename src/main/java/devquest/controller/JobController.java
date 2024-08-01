@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class JobController {
+@RequestMapping("/job")
+public class JobController extends BaseController {
 } // End of JobController class
