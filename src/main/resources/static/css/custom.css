@@ -1,5 +1,9 @@
 /* src/main/resources/static/css/custom.css */
 
+#siteLogo {
+    font-family: 'SDSamliphopangche_Outline', sans-serif;
+}
+
 .navbar-nav .nav-item {
     margin-right: 20px;
     /* 각 메뉴 항목 간의 간격을 설정 */
