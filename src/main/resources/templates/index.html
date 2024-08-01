@@ -24,19 +24,13 @@
 
 <body>
 <!-- header.html -->
-<header th:replace="fragments/header :: header"></header>
+<header th:replace="~{fragments/header :: header}"></header>
 
 <!-- 메인 컨텐츠 -->
-<main>
-	<!--	<div class="sidebar-left" th:if="${leftSidebarVisible ?: false}"-->
-	<!--	     th:replace="fragments/left-sidebar :: left-sidebar"></div>-->
-	<!--	<div class="content" th:include="${content}"></div>-->
-	<!--	<div class="sidebar-right" th:if="${rightSidebarVisible ?: false}"-->
-	<!--	     th:replace="fragments/right-sidebar :: right-sidebar"></div>-->
-</main>
+<!-- base.html 삽입 -->
 
 <!-- footer.html -->
-<footer th:replace="fragments/footer :: footer"></footer>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 
 </body>
 </html>
