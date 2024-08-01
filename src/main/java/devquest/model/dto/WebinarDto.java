@@ -1,3 +1,5 @@
+// src\main\java\devquest\model\dto\WebinarDto.java
+
 package devquest.model.dto;
 
 import lombok.*;
