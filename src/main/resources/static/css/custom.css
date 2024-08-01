@@ -1,2 +1,11 @@
 /* src/main/resources/static/css/custom.css */
 
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    /* 각 메뉴 항목 간의 간격을 설정 */
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+    /* 마지막 메뉴 항목의 오른쪽 마진을 없앰 */
+}

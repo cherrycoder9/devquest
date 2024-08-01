@@ -1,33 +1,51 @@
 <!-- src\main\resources\templates\fragments\header.html -->
-<!-- 프래그먼트 파일이므로, <!DOCTYPE html>, <html> 같은 태그는 필요하지 않음 -->
-<!-- 프래그먼트는 메인 템플릿에 포함될 부분이기 때문에 이런 태그들을 제거 -->
+
+<!-- head 프래그먼트 -->
+<head th:fragment="header-head">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title th:text="${title}">DevQuest</title>
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+	<script crossorigin="anonymous" defer
+	        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script defer th:src="@{/js/custom.js}"></script>
+</head>
+
+<!-- header 프래그먼트, body 안에 들어가야 함 -->
 <header class="py-3 mb-4 border-bottom" th:fragment="header">
-	<div class="container d-flex flex-wrap justify-content-center">
-		<a class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none"
-		   th:href="@{/}">
+	<div class="container d-flex align-items-center">
+		<a class="navbar-brand d-flex align-items-center" th:href="@{/}">
 			<span class="fs-4">DevQuest</span>
 		</a>
-		<nav>
-			<ul class="nav nav-pills">
-				<li class="nav-item"><a class="nav-link" th:href="@{/company}">기업</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/job}">채용</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/resume}">셀프구직</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/team}">팀빌딩</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/quest}">퀘스트</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/webinar}">웨비나</a></li>
-				<li class="nav-item" th:if="${user == null}">
-					<a class="nav-link" th:href="@{/user/register}">회원가입</a>
-				</li>
-				<li class="nav-item" th:if="${user != null}">
-					<a class="nav-link" th:href="@{/user/profile}">프로필</a>
-				</li>
-				<li class="nav-item" th:if="${user == null}">
-					<a class="nav-link" th:href="@{/user/login}">로그인</a>
-				</li>
-				<li class="nav-item" th:if="${user != null}">
-					<a class="nav-link" th:href="@{/user/logout}">로그아웃</a>
-				</li>
-			</ul>
+		<nav class="navbar navbar-expand-lg w-100 justify-content-center">
+			<div class="navbar-collapse">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item"><a class="nav-link" th:href="@{/company}">기업</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/job}">채용</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/resume}">셀프구직</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/team}">팀빌딩</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/quest}">퀘스트</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/webinar}">웨비나</a></li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item" th:if="${user == null}">
+						<a class="nav-link" th:href="@{/user/register}">회원가입</a>
+					</li>
+					<li class="nav-item" th:if="${user != null}">
+						<a class="nav-link" th:href="@{/user/profile}">프로필</a>
+					</li>
+					<li class="nav-item" th:if="${user == null}">
+						<a class="nav-link" th:href="@{/user/login}">로그인</a>
+					</li>
+					<li class="nav-item" th:if="${user != null}">
+						<a class="nav-link" th:href="@{/user/logout}">로그아웃</a>
+					</li>
+				</ul>
+			</div>
 		</nav>
 	</div>
 </header>
