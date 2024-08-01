@@ -1,5 +1,3 @@
-// src\main\java\devquest\model\dto\UserDto.java
-
 package devquest.model.dto;
 
 import lombok.*;
@@ -11,6 +9,5 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder // 빌더 패턴 적용 가능하게 함
-public class UserDto {
-
+public class TeamDto {
 }
