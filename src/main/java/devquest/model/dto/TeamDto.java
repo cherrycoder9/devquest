@@ -9,5 +9,5 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder // 빌더 패턴 적용 가능하게 함
-public class ResumeDto {
-} // End of ResumeDto class
+public class TeamDto {
+} // End of TeamDto class

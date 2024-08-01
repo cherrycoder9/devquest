@@ -8,7 +8,7 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-// XML 설정의 단점을 보완하고자 도입한 어노테이션
+// @Configuration: XML 설정의 단점을 보완하고자 도입한 어노테이션
 // XML 기반 설정과 달리 Java 코드로 빈을 정의함으로써 컴파일 타임에 타입 오류를 검출
 // Spring 컨텍스트에 빈을 등록할 때 사용
 // Spring 컨텍스트란 애플리케이션에서 객체를 생성하고 구성하며 관리하는 역할
@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ServerConfiguration {
 
-    // XML 설정 파일 대신 자바 클래스를 사용해 구성 정보를 정의하고자 할 때 사용
+    // @Bean: XML 설정 파일 대신 자바 클래스를 사용해 구성 정보를 정의하고자 할 때 사용
     // 빈의 초기화가 복잡하거나 외부 라이브러리 객체를 스프링 빈으로 등록해야 할 때 유용
     // 특정 조건에서만 빈을 등록하고자 할때는 @Conditional 과 함께 사용될 수 있음
     // @Bean(name = "beanName")과 같이 이름을 명시적으로 지정할 수 있음

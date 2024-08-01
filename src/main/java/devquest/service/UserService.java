@@ -6,4 +6,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-}
+} // End of UserService class

@@ -130,4 +130,4 @@ public class ViewController {
         return "webinar/detail";
     }
 
-}
+} // End of ViewController class
