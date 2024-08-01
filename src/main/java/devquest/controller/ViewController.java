@@ -2,7 +2,10 @@
 
 package devquest.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -31,8 +34,15 @@ public class ViewController {
 
     // 프로필 설정 페이지 표시
     @GetMapping("/user/profile")
-    public String profile() {
+    public String profile(final Model model) {
         System.out.println("ViewController.profile()");
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            // 사용자가 인증되지 않았으면 로그인 페이지로 리다이렉트
+            return "redirect:/user/login";
+        }
+        // 사용자가 인증된 경우, 인증된 사용자의 정보를 모델에 추가
+        model.addAttribute("user", authentication.getName());
         return "user/profile";
     }
 
