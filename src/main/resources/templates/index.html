@@ -2,23 +2,41 @@
 <!-- 웹사이트의 홈페이지 또는 랜딩 페이지 역할 -->
 <!-- 사용자가 웹사이트에 처음 접속했을 때 보게 되는 페이지 -->
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>하이</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<!-- th:text는 HTML 요소의 텍스트 내용을 동적으로 변경하는 Thymeleaf 속성 -->
+	<!-- 일반적인 HTML 텍스트 내용을 덮어쓰고, 동적으로 지정한 값으로 대체 -->
+	<!-- ${title}는 Thymeleaf 표현식으로, 모델에서 title이라는 키에 해당하는 값을 가져와서 텍스트로 출력 -->
+	<!-- 컨트롤러에서 model.addAttribute("title", "페이지 제목"); 설정하면, -->
+	<!-- title의 값이 "페이지 제목"으로 대체 -->
+	<title th:text="${title}">DevQuest</title>
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/custom.css}">
+	<script crossorigin="anonymous"
+	        defer integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script defer th:src="@{/js/custom.js}"></script>
 </head>
 
 <body>
-	<!-- 타임리프 이용한 헤더 -->
+<!-- header.html -->
+<header th:replace="fragments/header :: header"></header>
 
-	<!-- 인덱스 페이지 메인 컨텐츠 -->
-	<div>
-		hello hi hoho good
-		헬로 안녕
-	</div>
+<!-- 메인 컨텐츠 -->
+<main>
+	<!--	<div class="sidebar-left" th:if="${leftSidebarVisible ?: false}"-->
+	<!--	     th:replace="fragments/left-sidebar :: left-sidebar"></div>-->
+	<!--	<div class="content" th:include="${content}"></div>-->
+	<!--	<div class="sidebar-right" th:if="${rightSidebarVisible ?: false}"-->
+	<!--	     th:replace="fragments/right-sidebar :: right-sidebar"></div>-->
+</main>
 
-	<!-- 타임리프 이용한 푸터 -->
+<!-- footer.html -->
+<footer th:replace="fragments/footer :: footer"></footer>
+
 </body>
-
 </html>

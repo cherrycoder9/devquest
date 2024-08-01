@@ -1,16 +1,7 @@
 <!-- src\main\resources\templates\fragments\right-sidebar.html -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-</head>
-
-<body>
-
-</body>
-
-</html>
+<div th:fragment="right-sidebar">
+	<!-- 사이드바 내용 -->
+	<p>오른쪽 사이드바</p>
+	<!-- 특정 페이지에서 사이드바를 표시하고 싶다면, 컨트롤러에서 아래와 같이 설정 -->
+	<!-- model.addAttribute("rightSidebarVisible", true); -->
+</div>

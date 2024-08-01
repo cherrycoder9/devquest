@@ -41,7 +41,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-void id(String s) {
-    println(s)
-}
