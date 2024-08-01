@@ -1,24 +1,26 @@
 /* src/main/resources/static/css/custom.css */
 
-* {
+body {
     font-family: 'Pretendard-Regular', sans-serif;
+    user-select: none;
 }
 
 #siteLogo {
     font-family: 'SDSamliphopangche_Outline', sans-serif;
 }
 
+#userMenu,
 #mainMenu {
     font-family: 'LINESeedKR-Bd', sans-serif;
     font-weight: bold;
 }
 
 .navbar-nav .nav-item {
+    /* 각 메뉴 항목 간 간격 */
     margin-right: 20px;
-    /* 각 메뉴 항목 간의 간격을 설정 */
 }
 
 .navbar-nav .nav-item:last-child {
+    /* 마지막 메뉴 항목의 오른쪽 마진 없앰 */
     margin-right: 0;
-    /* 마지막 메뉴 항목의 오른쪽 마진을 없앰 */
 }
