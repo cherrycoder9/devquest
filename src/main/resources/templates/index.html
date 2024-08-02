@@ -1,14 +1,25 @@
 <!-- src\main\resources\templates\index.html -->
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <!-- Head 태그 -->
-<div th:replace="~{fragments/header :: header-head}"></div>
+
+<head>
+	<div th:replace="~{fragments/header :: header-head}"></div>
+</head>
+
 <body>
-<!-- 상단 메뉴 -->
-<div th:replace="~{fragments/header :: header}"></div>
-<!-- 메인페이지 콘텐츠 -->
-<!-- 내용 -->
-<!-- 하단 메뉴 -->
-<div th:replace="~{fragments/footer :: footer}"></div>
+	<!-- 상단 메뉴 -->
+	<header th:replace="~{fragments/header :: header}"></header>
+	<!-- 메인 콘텐츠 영역 -->
+	<main>
+		<aside th:replace="~{fragments/left-list-sidebar :: left-list-sidebar}"></aside>
+		<section>
+			<div>메인페이지 콘텐츠</div>
+		</section>
+		<aside th:replace="~{fragments/right-sidebar :: right-sidebar}"></aside>
+	</main>
+	<!-- 하단 메뉴 -->
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
+
 </html>

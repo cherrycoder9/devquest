@@ -1,25 +1,31 @@
-/* src/main/resources/static/css/custom.css */
+/* src\main\resources\static\css\custom.css */
 
+/* 전역 기본 글꼴 */
 body {
     font-family: 'Pretendard-Regular', sans-serif;
     user-select: none;
 }
 
+/* 사이트 로고 DevQuest 끌꼴 */
 #siteLogo {
     font-family: 'SDSamliphopangche_Outline', sans-serif;
 }
 
+/* 핵심 메뉴 메인 끌꼴 */
 #userMenu,
-#mainMenu {
+#mainMenu,
+.subMenu {
     font-family: 'LINESeedKR-Bd', sans-serif;
     font-weight: bold;
 }
 
+/* header 태그 메뉴 간격 조정 */
 .navbar-nav .nav-item {
     /* 각 메뉴 항목 간 간격 */
     margin-right: 20px;
 }
 
+/* 우측 메뉴 마진 제거 */
 .navbar-nav .nav-item:last-child {
     /* 마지막 메뉴 항목의 오른쪽 마진 없앰 */
     margin-right: 0;

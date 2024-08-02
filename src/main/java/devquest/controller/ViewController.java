@@ -11,119 +11,120 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController {
 
-    // 메인 페이지 표시
+    // 메인 페이지 HTML 표시
     @GetMapping("/")
     public String index() {
         System.out.println("ViewController.index()");
         return "index";
     }
 
-    // 로그인 페이지 표시
+    // 로그인 페이지 HTML 표시
     @GetMapping("/user/login")
-    public String login() {
+    public String login(final Model model) {
         System.out.println("ViewController.login()");
+        final String title = "로그인 페이지";
+        // 모델에 데이터 추가
+        model.addAttribute("title", "DevQuest - " + title);
         return "user/login";
     }
 
-    // 회원가입 페이지 표시
+    // 회원가입 페이지 HTML 표시
     @GetMapping("/user/register")
     public String register() {
         System.out.println("ViewController.register()");
         return "user/register";
     }
 
-    // 프로필 설정 페이지 표시
+    // 프로필 설정 페이지 HTML 표시
     @GetMapping("/user/profile")
     public String profile(final Model model) {
         System.out.println("ViewController.profile()");
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null || !authentication.isAuthenticated()) {
-            // 사용자가 인증되지 않았으면 로그인 페이지로 리다이렉트
-            return "redirect:/user/login";
+        if (authentication != null && authentication.isAuthenticated()) {
+            model.addAttribute("user", authentication.getName());
+            return "user/profile";
         }
-        // 사용자가 인증된 경우, 인증된 사용자의 정보를 모델에 추가
-        model.addAttribute("user", authentication.getName());
-        return "user/profile";
+        return "redirect:/user/login";
     }
 
-    // 등록 기업 리스트 페이지 표시
+    // 등록 기업 리스트 페이지 HTML 표시
     @GetMapping("/company/list")
     public String companyList() {
         System.out.println("ViewController.companyList()");
         return "company/list";
     }
 
-    // 기업 상세 페이지 표시
+    // 기업 상세 페이지 HTML 표시
     @GetMapping("/company/detail")
     public String companyDetail() {
         System.out.println("ViewController.companyDetail()");
         return "company/detail";
     }
 
-    // 채용 리스트 페이지 표시
+    // 채용 리스트 페이지 HTML 표시
     @GetMapping("/job/list")
     public String jobList() {
         System.out.println("ViewController.jobList()");
         return "job/list";
     }
 
-    // 채용 상세 페이지 표시
+    // 채용 상세 페이지 HTML 표시
     @GetMapping("/job/detail")
     public String jobDetail() {
         System.out.println("ViewController.jobDetail()");
         return "job/detail";
     }
 
-    // 셀프구직 리스트 페이지 표시
+    // 셀프구직 리스트 페이지 HTML 표시
     @GetMapping("/resume/list")
     public String resumeList() {
         System.out.println("ViewController.resumeList()");
         return "resume/list";
     }
 
-    // 셀프구직 상세 페이지 표시
+    // 셀프구직 상세 페이지 HTML 표시
     @GetMapping("/resume/detail")
     public String resumeDetail() {
         System.out.println("ViewController.resumeDetail()");
         return "resume/detail";
     }
 
-    // 팀빌딩, 팀구성 리스트 표시
+    // 팀빌딩, 팀구성 리스트 HTML 표시
     @GetMapping("/team/list")
     public String teamList() {
         System.out.println("ViewController.teamList()");
         return "team/list";
     }
 
-    // 팀빌딩, 팀구성 상세 페이지 표시
+    // 팀빌딩, 팀구성 상세 페이지 HTML 표시
     @GetMapping("/team/detail")
     public String teamDetail() {
         System.out.println("ViewController.teamDetail()");
         return "team/detail";
     }
 
-    // 개발협업 퀘스트 리스트 페이지 표시
+    // 개발협업 퀘스트 리스트 페이지 HTML 표시
     @GetMapping("/quest/list")
     public String questList() {
         System.out.println("ViewController.questList()");
         return "quest/list";
     }
 
-    // 개발협업 퀘스트 상세 페이지 표시
+    // 개발협업 퀘스트 상세 페이지 HTML 표시
     @GetMapping("/quest/detail")
     public String questDetail() {
         System.out.println("ViewController.questDetail()");
         return "quest/detail";
     }
 
-    // 개발 웨비나 및 세미나 리스트 페이지 표시
+    // 개발 웨비나 및 세미나 리스트 페이지 HTML 표시
     @GetMapping("/webinar/list")
     public String webinarList() {
         System.out.println("ViewController.webinarList()");
         return "webinar/list";
     }
 
-    // 개발 웨비나 및 세미나 상세 페이지 표시
+    // 개발 웨비나 및 세미나 상세 페이지 HTML 표시
     @GetMapping("/webinar/detail")
     public String webinarDetail() {
         System.out.println("ViewController.webinarDetail()");

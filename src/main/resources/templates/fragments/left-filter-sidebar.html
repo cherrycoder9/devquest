@@ -1,0 +1,62 @@
+<!-- src\main\resources\templates\fragments\left-filter-sidebar.html -->
+<aside th:fragment="left-filter-sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3">
+        <div id="filterOptions">
+            <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>필터링 옵션</span>
+            </h5>
+            <form id="filterForm">
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <div class="form-check">
+                            <input class="form-check-input filter-option" type="checkbox" id="allJobTypes"
+                                name="jobType" value="all">
+                            <label class="form-check-label" for="allJobTypes">전체 직무</label>
+                        </div>
+                        <div class="ms-3">
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="frontend"
+                                    name="jobType" value="frontend">
+                                <label class="form-check-label" for="frontend">프론트엔드</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="backend"
+                                    name="jobType" value="backend">
+                                <label class="form-check-label" for="backend">백엔드</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="fullstack"
+                                    name="jobType" value="fullstack">
+                                <label class="form-check-label" for="fullstack">풀스택</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="form-check">
+                            <input class="form-check-input filter-option" type="checkbox" id="allExperience"
+                                name="experience" value="all">
+                            <label class="form-check-label" for="allExperience">전체 경력</label>
+                        </div>
+                        <div class="ms-3">
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="junior"
+                                    name="experience" value="junior">
+                                <label class="form-check-label" for="junior">신입</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="mid" name="experience"
+                                    value="mid">
+                                <label class="form-check-label" for="mid">중급 (3-5년)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input filter-option" type="checkbox" id="senior"
+                                    name="experience" value="senior">
+                                <label class="form-check-label" for="senior">고급 (5년 이상)</label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</aside>
