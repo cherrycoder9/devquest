@@ -3,11 +3,22 @@
 package devquest.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
-@org.springframework.context.annotation.Configuration
+// @EnableWebSecurity 설명
+// 1. 스프링 시큐리티의 기본 설정을 활성화
+// 2. 사용자 정의 보안 설정을 정의하기 위해 SecurityConfigurer를 확장하는 클래스를 작성할 수 있도록 함
+// 3. 어노테이션이 적용된 클래스가 스프링 시큐리티 설정 클래스로 인식되며,
+// 4. HTTP 보안 설정 및 인증, 인가 설정을 위한 메서드를 정의할 수 있게 됨
+// 참고: SecurityConfig와 SecurityConfigurer는 다르다
+// SecurityConfig는 보통 사용자가 직접 정의하는 클래스 이름
+// SecurityConfigurer는 스프링 시큐리티 프레임워크의 일부로, 보안 설정을 구성하기 위해 제공되는 인터페이스
+@Configuration
+@EnableWebSecurity
 public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 클래스
 
     @Bean
@@ -25,10 +36,10 @@ public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 �
                 //                        .permitAll()
                 //                )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/company/**", "/job/**", "/resume/**", "/team/**", "/quest/**", "/webinar/**").permitAll()
+                        .requestMatchers("/", "/company/**", "/job/**", "/resume/**", "/team/**", "/quest/**", "/webinar/**").permitAll()
                         .requestMatchers("/user/login", "/user/register").permitAll()
                         .requestMatchers("/user/profile").authenticated()
-                        .anyRequest().permitAll()
+                        .anyRequest().permitAll() // .authenticated() 으로 바꾸면 글꼴 등 제대로 로딩 안됨
                 )
                 /*
                  * Spring Security 5.4 이상 버전에서는 antMatchers 메서드 대신
