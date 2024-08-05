@@ -30,3 +30,12 @@ body {
     /* 마지막 메뉴 항목의 오른쪽 마진 없앰 */
     margin-right: 0;
 }
+
+/* 구글 머티리얼 아이콘 기본세팅 */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}

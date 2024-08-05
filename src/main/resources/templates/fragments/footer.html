@@ -1,5 +1,28 @@
 <!-- src\main\resources\templates\fragments\footer.html -->
-<footer class="py-3 border-top" th:fragment="footer">
-	<!-- 푸터 내용 -->
-	<div>푸터페이지</div>
+<footer class="footer border-top" th:fragment="footer">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<ul class="list-unstyled">
+					<li><a href="#">회사소개</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul class="list-unstyled">
+					<li><a href="#">협업제안</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul class="list-unstyled">
+					<li><a href="#">서비스약관</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul class="list-unstyled">
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </footer>

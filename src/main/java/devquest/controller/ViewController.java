@@ -21,6 +21,7 @@ public class ViewController {
     // 로그인 페이지 HTML 표시
     @GetMapping("/user/login")
     public String login(final Model model) {
+        // 일반적으로 Model 인터페이스와 ModelMap, ModelAndView 클래스를 사용해 모델 객체 처리
         System.out.println("ViewController.login()");
         final String title = "로그인 페이지";
         // 모델에 데이터 추가
@@ -31,20 +32,23 @@ public class ViewController {
     // 회원가입 페이지 HTML 표시
     @GetMapping("/user/signup")
     public String signup() {
-        System.out.println("ViewController.register()");
+        System.out.println("ViewController.signup()");
         return "user/signup";
     }
 
     // 프로필 설정 페이지 HTML 표시
     @GetMapping("/user/profile")
-    public String profile(final Model model) {
+    public String profile(final Model model) { // 스프링 MVC 모델 객체
         System.out.println("ViewController.profile()");
+        // 인증 정보를 통해 사용자 이름을 가져옴
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // 인증 정보가 null이 아니고 사용자가 인증된 상태라면
         if (authentication != null && authentication.isAuthenticated()) {
+            // 모델에 사용자 이름 추가
             model.addAttribute("user", authentication.getName());
-            return "user/profile";
+            return "user/profile"; // 뷰 이름 반환
         }
-        return "redirect:/user/login";
+        return "redirect:/user/login"; // 인증되지 않은 경우 리다이렉트
     }
 
     // 등록 기업 리스트 페이지 HTML 표시
