@@ -37,7 +37,7 @@ public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 �
                 //                )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/company/**", "/job/**", "/resume/**", "/team/**", "/quest/**", "/webinar/**").permitAll()
-                        .requestMatchers("/user/login", "/user/register").permitAll()
+                        .requestMatchers("/user/login", "/user/signup").permitAll()
                         .requestMatchers("/user/profile").authenticated()
                         .anyRequest().permitAll() // .authenticated() 으로 바꾸면 글꼴 등 제대로 로딩 안됨
                 )

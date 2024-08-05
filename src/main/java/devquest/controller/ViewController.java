@@ -29,10 +29,10 @@ public class ViewController {
     }
 
     // 회원가입 페이지 HTML 표시
-    @GetMapping("/user/register")
-    public String register() {
+    @GetMapping("/user/signup")
+    public String signup() {
         System.out.println("ViewController.register()");
-        return "user/register";
+        return "user/signup";
     }
 
     // 프로필 설정 페이지 HTML 표시
