@@ -21,12 +21,9 @@ public class UserController extends BaseController { // 베이스컨트롤러엔
     private UserService userService;
 
     // 아이디 중복검사 처리 컨트롤러
-    // <?>는 자바에서 언제든 사용할 수 있는 와일드카드 타입 자료형
-    // 제네릭 클래스나 메서드를 정의할 때 사용할 수 있는 특수한 타입 파라미터
-    // 어떤 타입이든 올 수 있다는 것을 의미
     @PostMapping("/check-username")
-    public ResponseEntity<?> checkUsername(@RequestBody final Map<String, String> request) {
-        // 클라이언트에서 보낸 JSON 데이터를 자바 객체로 변환해 메서드 파라미터로 전달하기 위해서 RequestBody 사용
+    // 확장성을 위한 Map<String, Boolean> 반환 자료형 설계 
+    public ResponseEntity<Map<String, Boolean>> checkUsername(@RequestBody final Map<String, String> request) {
         final String username = request.get("username");
         final boolean exists = userService.checkUsernameExists(username);
 
@@ -42,6 +39,9 @@ public class UserController extends BaseController { // 베이스컨트롤러엔
     public ResponseEntity<?> logout(final WebRequest request) {
         // ResponseEntity<?>: HTTP 응답을 나타내는 객체
         // 상태 코드, 헤더, 본문 등을 포함할 수 있음
+        // <?>는 자바에서 언제든 사용할 수 있는 와일드카드 타입 자료형
+        // 제네릭 클래스나 메서드를 정의할 때 사용할 수 있는 특수한 타입 파라미터
+        // 어떤 타입이든 올 수 있다는 것을 의미
 
         // 세션 무효화
         request.removeAttribute("user", WebRequest.SCOPE_SESSION);
