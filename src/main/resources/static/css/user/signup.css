@@ -1,9 +1,5 @@
 /* src\main\resources\static\css\user\signup.css */
 
-body {
-    background-color: #F2F2F0;
-}
-
 main {
     margin-top: 30px;
 }
@@ -20,39 +16,8 @@ main {
     width: 24px;
     height: 24px;
     display: none;
-    /* 기본적으로 아이콘을 숨깁니다 */
-}
-
-.tooltip {
-    position: absolute;
-    background-color: #A96424;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    display: none;
-    /* 기본적으로 툴팁을 숨깁니다 */
-    top: 50%;
-    left: 150px;
-    /* 아이디 라벨의 오른쪽으로 위치 조정 */
-    transform: translateY(-50%);
-    white-space: nowrap;
-    z-index: 1000;
-    /* 툴팁이 다른 요소 위에 표시되도록 */
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -5px;
-    transform: translateY(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #A96424 transparent transparent;
 }
 
 .position-relative {
     position: relative;
-    /* 툴팁 위치를 조정할 수 있도록 */
 }

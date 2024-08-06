@@ -7,13 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const invalidFeedback = document.getElementById('username-invalid');
     const questionFeedback = document.getElementById('username-question');
     const validFeedback = document.getElementById('username-valid');
-    const tooltip = document.getElementById('username-tooltip');
 
     // 초기 상태에서 빨간색 X 아이콘만 표시
     invalidFeedback.style.display = "inline-block";
     questionFeedback.style.display = "none";
     validFeedback.style.display = "none";
-    tooltip.style.display = "none";
 });
 
 // 비밀번호 일치 확인
@@ -30,30 +28,27 @@ document.getElementById('signupForm').addEventListener('submit', function (event
     }
 });
 
-// 아이디 확인 
-document.getElementById('username').addEventListener('input', function () {
-    const username = this.value;
-    const invalidFeedback = document.getElementById('username-invalid');
-    const questionFeedback = document.getElementById('username-question');
-    const validFeedback = document.getElementById('username-valid');
-    const tooltip = document.getElementById('username-tooltip');
-
-    const isValidUsername = /^[a-zA-Z](?=.*[a-zA-Z])[a-zA-Z0-9]{5,}$/.test(username);
+// 아이디 중복 검사 
+document.getElementById('check-username').addEventListener('click', function () {
+    const username = document.getElementById('username').value;
 
     if (username === "") {
-        invalidFeedback.style.display = "inline-block";
-        questionFeedback.style.display = "none";
-        validFeedback.style.display = "none";
-        tooltip.style.display = "none";
-    } else if (!isValidUsername) {
-        invalidFeedback.style.display = "none";
-        questionFeedback.style.display = "inline-block";
-        validFeedback.style.display = "none";
-        tooltip.style.display = "block";
-    } else {
-        invalidFeedback.style.display = "none";
-        questionFeedback.style.display = "none";
-        validFeedback.style.display = "inline-block";
-        tooltip.style.display = "none";
+        alert('아이디를 입력하세요.');
+        return;
     }
+
+    // 아이디 중복 검사를 위한 AJAX
+    // 두 번째 매개변수로 데이터를 객체 형태로 전달
+    axios.post('/api/user/check-username', { username: username })
+        .then(response => {
+            if (response.data.exists) {
+                alert('이미 사용 중인 아이디입니다.');
+            } else {
+                alert('사용 가능한 아이디입니다.');
+            }
+        })
+        .catch(error => {
+            console.error('아이디 중복 검사 중 오류 발생:', error);
+            alert('아이디 중복 검사 중 오류가 발생했습니다.');
+        });
 });

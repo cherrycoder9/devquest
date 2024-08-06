@@ -12,42 +12,42 @@
     <header th:replace="~{fragments/header :: header}"></header>
 
     <!-- 메인 콘텐츠 영역 -->
+    <link rel="stylesheet" th:href="@{/css/user/signup.css}">
     <script defer th:src="@{/js/user/signup.js}"></script>
     <main class="container mt-5">
         <section>
             <h2 class="mb-4">회원가입</h2>
             <form id="signupForm">
-                <div class="mb-3 position-relative">
-                    <label for="username" class="form-label">아이디</label>
-                    <div class="tooltip" id="username-tooltip">6자리 이상의 알파벳 또는 알파벳과 숫자로 아이디를 구성하세요.</div>
+                <div class="mb-3">
+                    <label class="form-label" for="username">아이디</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="username" placeholder="아이디를 입력하세요" required>
-                        <span class="input-group-text">
-                            <img th:src="@{/images/red-x.svg}" class="feedback-icon" id="username-invalid">
-                            <img th:src="@{/images/orange-question.svg}" class="feedback-icon" id="username-question">
-                            <img th:src="@{/images/green-check.svg}" class="feedback-icon" id="username-valid">
-                        </span>
+                        <input class="form-control custom-width" id="username" placeholder="아이디를 입력하세요" required
+                            type="text">
+                        <button class="btn btn-secondary" type="button" id="check-username">ID 중복검사</button>
                     </div>
+                    <small class="form-text text-muted">6자리 이상의 알파벳 또는 알파벳과 숫자</small>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">암호</label>
-                    <input type="password" class="form-control" id="password" placeholder="암호를 입력하세요" required>
+                    <label class="form-label" for="password">암호</label>
+                    <input class="form-control custom-width" id="password" placeholder="암호를 입력하세요" required
+                        type="password">
                 </div>
                 <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">암호 재입력</label>
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="암호를 다시 입력하세요"
-                        required>
+                    <label class="form-label" for="confirmPassword">암호 재입력</label>
+                    <input class="form-control custom-width" id="confirmPassword" placeholder="암호를 다시 입력하세요" required
+                        type="password">
                 </div>
                 <div class="mb-3">
-                    <label for="pin" class="form-label">개인식별번호 (숫자 6자리)</label>
-                    <input type="text" class="form-control" id="pin" placeholder="개인식별번호를 입력하세요" pattern="\d{6}"
-                        required>
+                    <label class="form-label" for="pin">개인식별번호 (숫자 6자리)</label>
+                    <input class="form-control custom-width" id="pin" pattern="\d{6}" placeholder="개인식별번호를 입력하세요"
+                        required type="text">
                 </div>
                 <div class="mb-3">
-                    <label for="nickname" class="form-label">닉네임</label>
-                    <input type="text" class="form-control" id="nickname" placeholder="닉네임을 입력하세요" required>
+                    <label class="form-label" for="nickname">닉네임</label>
+                    <input class="form-control custom-width" id="nickname" placeholder="닉네임을 입력하세요" required
+                        type="text">
                 </div>
-                <button type="submit" class="btn btn-primary">가입하기</button>
+                <button class="btn btn-primary" type="submit">가입하기</button>
             </form>
         </section>
     </main>
