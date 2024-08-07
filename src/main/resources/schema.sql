@@ -1,3 +1,13 @@
+DROP TABLE IF EXISTS user_board_permissions;
+DROP TABLE IF EXISTS user_job_categories;
+DROP TABLE IF EXISTS employers;
+DROP TABLE IF EXISTS company_industries;
+DROP TABLE IF EXISTS boards;
+DROP TABLE IF EXISTS job_categories;
+DROP TABLE IF EXISTS industries;
+DROP TABLE IF EXISTS companies;
+DROP TABLE IF EXISTS users;
+
 -- 회원 테이블 생성
 CREATE TABLE users
 (
