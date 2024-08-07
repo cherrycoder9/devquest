@@ -24,14 +24,20 @@ public class UserController extends BaseController { // 베이스컨트롤러엔
     @PostMapping("/check-username")
     // 확장성을 위한 Map<String, Boolean> 반환 자료형 설계 
     public ResponseEntity<Map<String, Boolean>> checkUsername(@RequestBody final Map<String, String> request) {
+        System.out.println("UserController.checkUsername");
         final String username = request.get("username");
+        System.out.println("username = " + username); // username 검사
         final boolean exists = userService.checkUsernameExists(username);
+        System.out.println("exists = " + exists); // exists 검사
 
+        // 응답 데이터를 담을 Map 객체
         final Map<String, Boolean> response = new HashMap<>();
+        // 응답 데이터는 JSON 형식으로 { "exists": true/false } 반환
         response.put("exists", exists);
 
+        // HTTP 상태 코드 200과 함께 응답 데이터 반환
         return ResponseEntity.ok(response);
-    }
+    } // End of checkUsername method
 
     // 로그아웃 처리 컨트롤러
     @PostMapping("/logout")

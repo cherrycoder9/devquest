@@ -10,6 +10,7 @@ public class UserDao extends BaseDao {
     private final static String CHECK_USERNAME_EXISTS_SQL = "SELECT COUNT(*) FROM users WHERE username = ?";
 
     public boolean checkUsernameExists(final String username) {
+        System.out.println("UserDao.checkUsernameExists");
         return queryForBoolean(CHECK_USERNAME_EXISTS_SQL, username);
-    }
+    } // End of checkUsernameExists method
 } // End of UserDao class
