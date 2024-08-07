@@ -4,6 +4,8 @@
 <!-- Head 태그 -->
 
 <head>
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
     <div th:replace="~{fragments/header :: header-head}"></div>
 </head>
 

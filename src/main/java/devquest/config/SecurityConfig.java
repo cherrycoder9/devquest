@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -39,7 +40,7 @@ public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 �
                         .requestMatchers("/", "/company/**", "/job/**", "/resume/**", "/team/**", "/quest/**", "/webinar/**").permitAll()
                         .requestMatchers("/user/login", "/user/signup").permitAll()
                         .requestMatchers("/user/profile").authenticated()
-                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/user/check-username").permitAll()
                         .anyRequest().permitAll() // .authenticated() 으로 바꾸면 글꼴 등 제대로 로딩 안됨
                 )
                 /*
@@ -78,7 +79,9 @@ public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 �
                 //         .permitAll()
                 // );
                 .logout(LogoutConfigurer::permitAll
-                );
+                )
+                // .csrf(csrf -> csrf.disable()); // 람다표현식 변형전
+                .csrf(AbstractHttpConfigurer::disable);  // CSRF 보호 비활성화;
 
         // HTTPS 설정에서 무한 리디렉션 루프가 발생할 수 있음
         // 이것을 방지하기 위한 설정

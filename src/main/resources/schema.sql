@@ -172,5 +172,3 @@ CREATE TABLE user_board_permissions
 -- 사용자 프로필
 -- 사용자 이력서
 --
-
-

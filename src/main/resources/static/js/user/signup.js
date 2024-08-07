@@ -2,6 +2,8 @@
 
 console.log('user/signup.js');
 
+
+
 // 페이지 로딩시 피드백 아이콘 초기화 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOMContentLoaded');
@@ -32,6 +34,9 @@ document.getElementById('signupForm').addEventListener('submit', function (event
     } // End of if
 }); // End of signupForm
 
+
+
+
 // 아이디 중복 검사 
 document.getElementById('check-username').addEventListener('click', function () {
     console.log('check-username');
@@ -45,9 +50,18 @@ document.getElementById('check-username').addEventListener('click', function () 
         return;
     }
 
+    // axios 응답 403 뜨는 문제 때문에 추가함
+    const csrfToken = document.querySelector('meta[name="_csrf"]').getAttribute('content');
+    const csrfHeader = document.querySelector('meta[name="_csrf_header"]').getAttribute('content');
+
     // 아이디 중복 검사를 위한 AJAX
     // 두 번째 매개변수로 데이터를 객체 형태로 전달
-    axios.post('/api/user/check-username', { username: username })
+    axios.post('/api/user/check-username', { username: username }, {
+        headers: {
+            [csrfHeader]: csrfToken,
+            'Content-Type': 'application/json'
+        }
+    })
         .then(response => {
             console.log('response.data: ' + response.data);
             if (response.data.exists) {
