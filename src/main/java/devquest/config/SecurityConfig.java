@@ -39,6 +39,7 @@ public class SecurityConfig { // 보안 설정을 정의하는데 사용되는 �
                         .requestMatchers("/", "/company/**", "/job/**", "/resume/**", "/team/**", "/quest/**", "/webinar/**").permitAll()
                         .requestMatchers("/user/login", "/user/signup").permitAll()
                         .requestMatchers("/user/profile").authenticated()
+                        .requestMatchers("/api/**").permitAll()
                         .anyRequest().permitAll() // .authenticated() 으로 바꾸면 글꼴 등 제대로 로딩 안됨
                 )
                 /*
