@@ -1,2 +1,2 @@
-// src\settings.gradle
+// devquest\settings.gradle
 rootProject.name = 'devquest'
