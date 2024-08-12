@@ -8,6 +8,14 @@
     font-style: normal;
 }
 
+/* 끄트머리 폰트 */
+@font-face {
+    font-family: 'Ggeuteumuri';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_04@1.0/Ggeuteumuri.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* LINE Seed 폰트 */
 @font-face {
     font-family: 'LINESeedKR-Bd';
