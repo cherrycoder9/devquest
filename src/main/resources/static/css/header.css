@@ -1,5 +1,13 @@
 /* devquest\src\main\resources\static\css\header.css */
 
+header {
+    display: flex;
+}
+
+.nav-menu>ul {
+    display: flex;
+}
+
 .logo {
     font-family: 'SDSamliphopangche_Outline';
 }

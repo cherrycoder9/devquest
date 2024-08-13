@@ -14,7 +14,10 @@
 
 body {
     font-family: 'Pretendard-Regular';
+    font-size: 18px;
     user-select: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 ul,
