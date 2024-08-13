@@ -1,1 +1,64 @@
 /* devquest\src\main\resources\static\css\common.css */
+
+/* 각 브라우저 기본 css 속성 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    user-select: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+optgroup,
+select {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 0;
+    text-align: left;
+}
