@@ -1,0 +1,10 @@
+/* devquest\src\main\resources\static\css\header.css */
+
+.logo {
+    font-family: 'SDSamliphopangche_Outline';
+}
+
+.nav-menu>*,
+.header-controls>* {
+    font-family: 'LINESeedKR-Bd';
+}

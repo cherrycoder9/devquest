@@ -5,29 +5,45 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    <script src="/js/mainpage.js" defer></script>
     <title>DevQuest</title>
 </head>
 
 <body>
     <!-- 헤더(상단메뉴) 영역 -->
     <header>
+        <!-- 상단 좌측 문자형 로고 -->
         <div class="container">
             <a href="/" class="logo">DevQuest</a>
         </div>
+        <!-- 상단 가운데 페이지 이동 메뉴 -->
         <nav class="nav-menu">
             <ul>
                 <li><a href="/quest/list">퀘스트</a></li>
                 <li><a href="/team/list">팀빌딩</a></li>
             </ul>
         </nav>
+        <!-- 상단 우측 회원정보 관련 메뉴 -->
         <div class="header-controls">
-
+            <button type="button" id="loginButton">로그인</button>
+            <button type="button" id="signupButton">회원가입</button>
+            <button type="button" id="profileButton" hidden>프로필</button>
+            <button type="button" id="logoutButton" hidden>로그아웃</button>
         </div>
     </header>
 
-    <!-- 사이트 소개 -->
-    <main>초기 페이지</main>
-    <a href="/">메인(매핑테스트중)</a>
+    <!-- 메인페이지 화면 -->
+    <main>
+        <h1 hidden>DevQuest 메인페이지</h1>
+
+    </main>
     <a href="/login">로그인(매핑테스트중)</a>
     <a href="/signup">회원가입(매핑테스트중)</a>
 
