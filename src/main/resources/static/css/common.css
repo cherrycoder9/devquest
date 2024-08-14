@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: 'Pretendard-Regular';
     font-size: 18px;
     user-select: none;
